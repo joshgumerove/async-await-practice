@@ -14,8 +14,11 @@
             quae laboriosam sapiente hic eos atque reiciendis doloremque
             esse, voluptatum suscipit eum dolore.</p>
         <script>
+            // setTimeout: intro to asynchronous function section
                 setTimeout(() => console.log("this should happen after 3 seconds"), 3000)
                 console.log('this should appear in the console first')
+                // note: setTimeout is a macro-task (have to wait for next round of event loop before being executed)
+                // event loop will block rendering while executing micro-tasks
             </script>
     </body>
 </html>
