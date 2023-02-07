@@ -13,7 +13,7 @@ const unblocking = () => {
       }
       return "this will be logged at end";
     })
-    .then((data) => console.log(data));
+    .then(output);
 };
 
 output("syncrhonous 1");
