@@ -1,9 +1,37 @@
 // async example
 
-async function message() {
-  return "hello world";
+// const { resolve } = require("path");
+
+// async function message() {
+//   return "hello world";
+// }
+
+// // async ensures that the function returns a promise
+
+// console.log(message().then(console.log));
+// console.log("cool"); // note how this gets logged first
+
+async function anotherMessage() {
+  let firstWord = await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("hello");
+    }, 1000);
+  });
+
+  let secondWord = await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("world");
+    }, 0);
+  });
+
+  console.log(`Done: ${firstWord} ${secondWord}`);
 }
 
-// async ensures that the function returns a promise
+function execute() {
+  anotherMessage(); // yields control to the context which it is running in
+  console.log("this should run first");
+}
 
-console.log(message());
+// anotherMessage();
+execute();
+console.log("will run second");
