@@ -21,7 +21,7 @@ async function anotherMessage() {
   let secondWord = await new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("world");
-    }, 0);
+    }, 1000);
   });
 
   console.log(`Done: ${firstWord} ${secondWord}`);
