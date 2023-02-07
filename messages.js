@@ -35,3 +35,15 @@ function execute() {
 // anotherMessage();
 execute();
 console.log("will run second");
+
+let josh;
+
+async function foo() {
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Josh"), 1000);
+  });
+
+  let message = await promise; // wait until the promise above resloves with the word Josh
+  josh = message;
+  console.log("this is josh: ", josh);
+}
